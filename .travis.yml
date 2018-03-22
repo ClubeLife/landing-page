@@ -1,0 +1,13 @@
+language: python
+python:
+  - "3.6"
+install:
+  - pip install -q -r requirements.txt
+script:
+  - python manage.py check
+  - python manage.py migrate
+  - coverage run --source='landing' manage.py test
+before_install:
+  - pip install codecov
+after_success:
+  - codecov
