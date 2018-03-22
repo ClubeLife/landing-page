@@ -12,3 +12,7 @@ class Associate(models.Model):
 
     created_at = models.DateTimeField('criado em', auto_now_add=True)
     modified_at = models.DateTimeField('modificado em', auto_now=True)
+
+    class Meta:
+        verbose_name = 'Associado'
+        verbose_name_plural = 'Associados'
