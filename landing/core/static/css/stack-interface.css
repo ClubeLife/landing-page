@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'stack-interface';
-  src: url('../fonts/stack-interface.eot?33839631');
-  src: url('../fonts/stack-interface.eot?33839631#iefix') format('embedded-opentype'),
-       url('../fonts/stack-interface.woff2?33839631') format('woff2'),
-       url('../fonts/stack-interface.woff?33839631') format('woff'),
-       url('../fonts/stack-interface.ttf?33839631') format('truetype'),
-       url('../fonts/stack-interface.svg?33839631#stack-interface') format('svg');
+  src: url('../font/stack-interface.eot?33839631');
+  src: url('../font/stack-interface.eot?33839631#iefix') format('embedded-opentype'),
+       url('../font/stack-interface.woff2?33839631') format('woff2'),
+       url('../font/stack-interface.woff?33839631') format('woff'),
+       url('../font/stack-interface.ttf?33839631') format('truetype'),
+       url('../font/stack-interface.svg?33839631#stack-interface') format('svg');
   font-weight: normal;
   font-style: normal;
 }
