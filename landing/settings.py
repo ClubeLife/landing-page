@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import django_heroku
 from decouple import config, Csv
 from dj_database_url import parse as dburl
 
@@ -116,3 +117,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
+
+django_heroku.settings(locals())
