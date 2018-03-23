@@ -32,12 +32,12 @@
 	<!-- The Wolf main css -->
 	<link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
 	<!-- fullcalendar -->
-	<link href='assets/css/fullcalendar.css' rel='stylesheet' />
-	<link href='assets/css/fullcalendar.print.css' rel='stylesheet' media='print' />
+	<!--link href='assets/css/fullcalendar.css' rel='stylesheet' /-->
+	<!--link href='assets/css/fullcalendar.print.css' rel='stylesheet' media='print' /-->
 	<!-- icheck -->
 	<link href="{% static 'assets/css/skins/all.css' %}" rel="stylesheet">
 	<!-- The Wolf demo css-->
-	<link href="{% static 'assets/css/The Wolfdemo.css' %}" rel="stylesheet">
+	<!--link href="{% static 'assets/css/The Wolfdemo.css' %}" rel="stylesheet"-->
 	<!-- theme css -->
 	<link href="{% static 'assets/css/theme.css' %}" rel="stylesheet">
 	<!-- media css for responsive  -->
@@ -150,7 +150,7 @@
 					</li> -->
 					<!-- START USER LOGIN DROPDOWN -->
 					<li class="dropdown dropdown-user">
-						<a data-close-others="true" data-hover="dropdown" data-toggle="dropdown" class="dropdown-toggle" href="javascript:;"> <img src="{% static 'assets/images/teem/placeholders.jpg' %}" class="rounded-circle" alt=""> <span class="username username-hide-on-mobile"> Nome do associado</span>							<i class="fa fa-angle-down"></i> </a>
+						<a data-close-others="true" data-hover="dropdown" data-toggle="dropdown" class="dropdown-toggle" href="javascript:;"> <img src="{% static 'assets/images/teem/placeholders.jpg' %}" class="rounded-circle" alt=""> <span class="username username-hide-on-mobile"> {{ request.user.first_name }}</span>							<i class="fa fa-angle-down"></i> </a>
 						<ul class="dropdown-menu dropdown-menu-default">
 							<!-- <li>
 								<a href="profile.html"> <i class="icon-user"></i> My Profile </a>								
@@ -495,7 +495,7 @@
 					<div class="col-md-3">
 						<div class="contact-box center-version">
 							<a href="profile.html"> <img src="{% static 'assets/images/teem/placeholders.jpg' %}" class="rounded-circle" alt="image">
-								<h3 class="m-b-xs"><strong>Nome do associado</strong></h3>
+								<h3 class="m-b-xs"><strong>{{ request.user.first_name }}</strong></h3>
 								<div class="font-bold">Consumer</div>
 								<address>
 									<strong></strong><br> Tempo de associação <strong>6 meses</strong><br> Inflluênciou <strong>4</strong>
@@ -773,9 +773,9 @@
 
 
 	<!-- fullcalendar -->
-	<script src='assets/js/vendor/lib/moment.min.js'></script>
-	<script src='assets/js/vendor/lib/jquery-ui.custom.min.js'></script>
-	<script src='assets/js/vendor/fullcalendar.min.js'></script>
+	<!--script src='assets/js/vendor/lib/moment.min.js'></script-->
+	<!--script src='assets/js/vendor/lib/jquery-ui.custom.min.js'></script-->
+	<!--script src='assets/js/vendor/fullcalendar.min.js'></script-->
 	<!-- icheck -->
 	<script src="{% static 'assets/js/vendor/icheck.js' %}"></script>
 	<!-- dataTables-->
@@ -799,12 +799,12 @@
 	<!-- dashboard1 js -->
 	<script src="{% static 'assets/js/dashboard1.js' %}"></script>
 	<!-- pace js -->
-	<script src="{% static 'assets/js/vendor/pace/pace.min.js' %}"></script>
+	<!--script src="{% static 'assets/js/vendor/pace/pace.min.js' %}"></script-->
 	<!-- main js -->
 	<script src="{% static 'assets/js/main.js' %}"></script>
 
 	<!-- Peity -->
-	<script src="{% static 'assets/js/vendor/peityJs/jquery.peity.min.js' %}"></script>
+	<!--script src="{% static 'assets/js/vendor/peityJs/jquery.peity.min.js' %}"></script-->
 	<script src="{% static 'assets/js/vendor/peityJs.js' %}"></script>
 	
 	
@@ -813,7 +813,7 @@
 	
 
 <!-- demo  -->
-<script src="{% static 'assets/js/appdemo.js' %}"></script>
+<!--script src="{% static 'assets/js/appdemo.js' %}"></script-->
 
 
 </body>
