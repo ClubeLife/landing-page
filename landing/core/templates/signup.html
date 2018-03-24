@@ -1,0 +1,130 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static 'css/stack-interface.css' %}" rel="stylesheet" type="text/css" media="all">
+        <link href="{% static 'css/socicon.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{% static 'css/stack-interface.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{% static 'css/theme.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{% static 'css/custom.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/awesomplete.css' %}" />
+
+    </head>
+    <body data-smooth-scroll-offset="77">
+        <div class="nav-container">
+            <div class="via-1510582659285" via="via-1510582659285" vio="Home Menu">
+                <div class="bar bar--sm visible-xs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-2">
+                                <a href="index.html"> <img class="logo logo-dark" alt="logo" src="{% static 'img/logo-dark.png' %}"> <img class="logo logo-light" alt="logo" src="{% static 'img/logo-light.png' %}"> </a>
+                            </div>
+                            <div class="col-xs-9 col-sm-10 text-right">
+                                <a href="#" class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs hidden-sm"> <i class="icon icon--sm stack-interface stack-menu"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav id="menu1" class="bar bar-1 hidden-xs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1 col-sm-2 hidden-xs">
+                                <div class="bar__module">
+                                    <a href="index.html"> <img class="logo logo-dark" alt="logo" src="{% static 'img/clublife-icon.png' %}"> <img class="logo logo-light" alt="logo" src="{% static 'img/logo-light.png' %}"> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="main-container">
+            <section class="imageblock switchable feature-large height-90">
+                <div class="imageblock__content col-md-6 col-sm-4 pos-right">
+                    <div class="background-image-holder"> <img alt="image" src="{% static 'img/landing-5.jpg' %}"> </div>
+                </div>
+                <div class="container pos-vertical-center">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-7">
+                            <h2>Crie sua conta ClubeLife<br></h2>
+                            <p class="lead">No momento estamos fazendo o pré-cadastro gratuito. Aproveite, em breve, os nossos benefícios.</p>
+
+                            {% if form.errors %}
+                                <p><b>Verifique os dados do cadastro e tente novamente!</b></p>
+                            {% endif %}
+
+                            <form name="signup_form" action="{% url 'signup' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-xs-12"><label>Dados Cadastrais</label></div>
+                                    <div class="col-xs-6"> <input class="validate-required" type="text" name="first_name" placeholder="Nome" /> </div>
+                                    <div class="col-xs-6"> <input class="validate-required" type="text" name="last_name" placeholder="Sobrenome" /> </div>
+                                    <div class="col-xs-12"> <input class="validate-required" type="text" name="date_of_birth" data-mask="00/00/0000" data-mask-selectonfocus="true" placeholder="Data de Nascimento (dd/mm/yyyy)" /> </div>
+                                    <div class="col-xs-4"> <input class="validate-required" type="text" name="tax_id" data-mask="000.000.000-00" data-mask-selectonfocus="true" placeholder="CPF" /> </div>
+                                    <div class="col-xs-4"> <input class="validate-required" type="text" name="phone" data-mask="(00) 0000-0000#" data-mask-selectonfocus="true" placeholder="Celular" /> </div>
+                                    <div class="col-xs-4"> <input class="validate-required" type="text" name="zipcode" data-mask="00000-000" data-mask-selectonfocus="true" placeholder="CEP" /> </div>
+                                    <div class="col-xs-12"> <input class="validate-required" type="email" name="email" placeholder="Endereço de e-mail" /> </div>
+                                    <div class="col-xs-12"><label>Login</label></div>
+                                    <div class="col-xs-12"> <input class="validate-required" type="text" name="username" placeholder="Username" /> </div>
+                                    <div class="col-xs-12"> <input class="validate-required" type="password" name="password" placeholder="Password" /> </div>
+                                    <!-- <div class="col-xs-12"><label>__</label></div> -->
+                                    <div class="col-xs-12"><label>Convidado(a) por</label></div>
+                                    <div class="col-xs-12"> <input id="influencers" class="validate-required" type="text" name="inviter_email" placeholder="E-mail" /></div>
+                                    <p></p>
+                                    <div class="col-xs-12"> <button type="submit" class="btn btn--primary type--uppercase">Criar Conta</button> </div>
+                                    <div class="col-xs-12"> <span class="type--fine-print">Ao criar sua conta, você aceita os <a href="#">Termos do Contrato</a></span> </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="text-center-xs space--xs bg--dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <ul class="list-inline">
+                                <li> <a href="#"><span class="h6 type--uppercase">contrato</span></a> </li>
+                                <li> <a href="#"><span class="h6 type--uppercase">apresentação</span></a> </li>
+                                <li> <a href="#"><span class="h6 type--uppercase">fale conosco </span></a> </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-5 text-right text-center-xs">
+                            <ul class="social-list list-inline list--hover">
+                                <li><a href="#"><i class="socicon socicon-google icon icon--xs"></i></a></li>
+                                <li><a href="#"><i class="socicon socicon-twitter icon icon--xs"></i></a></li>
+                                <li><a href="#"><i class="socicon socicon-facebook icon icon--xs"></i></a></li>
+                                <li><a href="#"><i class="socicon socicon-instagram icon icon--xs"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7"> <span class="type--fine-print">© <span class="update-year">2018</span> Clube Life</span>
+                        </div>
+                        <div class="col-sm-5 text-right text-center-xs"> <a class="type--fine-print" href="#">suporte@clube.life</a> </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+        <script src="{% static 'js/parallax.js' %}"></script>
+        <script src="{% static 'js/smooth-scroll.min.js' %}"></script>
+        <script src="{% static 'js/scripts.js' %}"></script>
+        <script src="{% static 'js/jquery.mask.js' %}"></script>
+        <script src="{% static 'js/awesomplete.js' %}"></script>
+        <script type="text/javascript">
+            var input = document.getElementById("influencers");
+            new Awesomplete(input, {
+                list: ["Attila Martins | attilasm@gmail.com", "Henrique Nogueira | hnogueira@gmail.com"]
+            });
+        </script>
+
+    </body>
+
+</html>
