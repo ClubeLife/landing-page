@@ -16,7 +16,7 @@ class Associate(models.Model):
         on_delete=models.CASCADE
     )
     date_of_birth = models.DateField('data de nascimento')
-    tax_id = models.CharField('cpf', max_length=14)
+    tax_id = models.CharField('cpf', max_length=14, unique=True)
     phone = models.CharField('telefone', max_length=32)
     zipcode = models.CharField('cep', max_length=32)
 
