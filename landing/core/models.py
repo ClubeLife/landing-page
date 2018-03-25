@@ -26,3 +26,6 @@ class Associate(models.Model):
     class Meta:
         verbose_name = 'Associado'
         verbose_name_plural = 'Associados'
+
+    def __str__(self):
+        return self.user.email
