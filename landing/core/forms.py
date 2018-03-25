@@ -5,7 +5,7 @@ from landing.core import models
 
 def inviter_email_validator(inviter_email):
     if not models.Associate.objects.filter(user__email=inviter_email).exists():
-        raise forms.ValidationError('O e-mail de anfitrião especificado ainda não foi cadastrado.')
+        raise forms.ValidationError('O e-mail de associado especificado não cadastrado.')
 
 
 def associate_email_validator(email):
