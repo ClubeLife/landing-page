@@ -34,10 +34,7 @@ def signup(request):
 
             inviter_email = associate_data['inviter_email']
             del associate_data['inviter_email']
-
-            inviter = None
-            if inviter_email:
-                inviter = User.objects.get(email=inviter_email).associate
+            inviter = User.objects.get(email=inviter_email).associate
 
             u = User.objects.create_user(**user_data)
             a = Associate.objects.create(user=u, influenced_by=inviter, **associate_data)
