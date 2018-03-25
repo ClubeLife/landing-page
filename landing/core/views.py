@@ -28,6 +28,8 @@ def signup(request):
         form = SignupForm(request.POST)
         if form.is_valid():
             data = form.cleaned_data
+
+            # Getting user data
             user_fields = ['username', 'password', 'email', 'first_name', 'last_name']
             user_data = {k: data[k] for k in user_fields}
             associate_data = {k: data[k] for k in data if k not in user_fields}
@@ -37,7 +39,7 @@ def signup(request):
             inviter = User.objects.get(email=inviter_email).associate
 
             u = User.objects.create_user(**user_data)
-            a = Associate.objects.create(user=u, influenced_by=inviter, **associate_data)
+            Associate.objects.create(user=u, influenced_by=inviter, **associate_data)
 
             return redirect(r('soon'))
     else:
