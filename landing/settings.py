@@ -1,6 +1,6 @@
 from pathlib import Path
 
-import django_heroku
+# import django_heroku
 from decouple import config, Csv
 from dj_database_url import parse as dburl
 
@@ -119,4 +119,4 @@ STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 
 LOGIN_URL = '/login/'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

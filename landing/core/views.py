@@ -23,6 +23,14 @@ def soon(request):
     return render(request, 'soon.html', {})
 
 
+def contact(request):
+    return render(request, 'contact.html', {})
+
+
+def politica(request):
+    return render(request, 'politica.html', {})
+
+
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
