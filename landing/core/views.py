@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, resolve_url as r
 
 from landing.core.forms import SignupForm
 from landing.core.models import Associate
+from landing.core.utils import send_email
 
 
 def index(request):
@@ -39,8 +40,9 @@ def signup(request, member_code=None):
             inviter = User.objects.get(email=inviter_email).associate
 
             u = User.objects.create_user(**user_data)
-            Associate.objects.create(user=u, influenced_by=inviter, **associate_data)
+            a = Associate.objects.create(user=u, influenced_by=inviter, **associate_data)
 
+            send_email(a, 'Bem-vindo(a) ao Clube Life!', 'email/welcome.html')
             return redirect(r('soon'))
     else:
         form = SignupForm()

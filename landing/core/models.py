@@ -32,6 +32,10 @@ class Associate(models.Model):
         verbose_name = 'Associado'
         verbose_name_plural = 'Associados'
 
+    @property
+    def invite_url(self):
+        return 'http://clube.life/signup/{}/'.format(self.member_code)
+
     def save(self, *args, **kwargs):
         self.member_code = random.choices(string.ascii_letters, k=settings.MEMBER_CODE_LENGTH)
         super().save(*args, **kwargs)

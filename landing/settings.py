@@ -121,4 +121,6 @@ LOGIN_URL = '/login/'
 
 MEMBER_CODE_LENGTH = 10
 
+MAILGUN_API_KEY = config('MAILGUN_API_KEY')
+
 django_heroku.settings(locals())

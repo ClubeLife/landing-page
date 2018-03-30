@@ -1,3 +1,5 @@
 SECRET_KEY=SD&F(*S&D6f9n7b(S*&Df9b87SDf_-)9#$@32
 DEBUG=True
 ALLOWED_HOSTS=127.0.0.1,.localhost,.herokuapp.com
+
+MAILGUN_API_KEY=
