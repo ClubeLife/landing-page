@@ -1,14 +1,29 @@
 <html>
 <body>
-<h2>Bem-vindo(a) ao Clube Life!</h2>
-
-<p>O seu usuário <b>{{ associate.user.username }}</b> foi criado com sucesso!</p>
+<h2>{{ associate.user.first_name|capfirst }}, seja bem-vindo(a) ao Clube Life!</h2>
 
 <p>
-    Para convidar participantes, compartilhe a URL
-    <a href="{{ associate.invite_url }}">{{ associate.invite_url }}</a>
+    Você foi convidado(a) pelo usuário <b>{{ associate.influenced_by.user.username }}</b> a participar do melhor Clube de
+    consumidores do Brasil.
+</p>
+
+<p>
+    Como associado(a) você terá à disposição produtos com descontos e ainda a possibilidade de ajudar no desenvolvimento do
+    Clube, recebendo por isso, é claro! A primeira coisa que você pode fazer para isto é influenciar outras pessoas a se
+    associarem também. Utilize o link <a href="{{ associate.invite_url }}">{{ associate.invite_url }}</a> para ter o seu
+    e-mail associado ao convite.
+</p>
+
+<p>
+    <b>Importante</b>: Estamos em fase de pré-lançamento, por isto entraremos em contato a cada passo importante que
+    dermos nos próximos meses até o lançamento oficial do Clube.
+</p>
+
+<p>
+    Agradecemos pelo seu interesse e esperamos ter ótimos momentos juntos nesta jornada.
 </p>
 
 <p><i>Equipe Clube Life.</i></p>
+
 </body>
 </html>
