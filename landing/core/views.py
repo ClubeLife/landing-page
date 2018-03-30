@@ -23,7 +23,7 @@ def soon(request):
     return render(request, 'soon.html', {})
 
 
-def signup(request):
+def signup(request, member_code=None):
     if request.method == 'POST':
         form = SignupForm(request.POST)
         if form.is_valid():
@@ -44,5 +44,8 @@ def signup(request):
             return redirect(r('soon'))
     else:
         form = SignupForm()
+        if member_code is not None:
+            a = Associate.objects.get(member_code=member_code)
+            form = SignupForm(initial={'inviter_email': a.user.email})
 
     return render(request, 'signup.html', {'form': form})

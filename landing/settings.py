@@ -119,4 +119,6 @@ STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 
 LOGIN_URL = '/login/'
 
+MEMBER_CODE_LENGTH = 10
+
 django_heroku.settings(locals())
