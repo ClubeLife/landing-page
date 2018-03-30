@@ -11,4 +11,7 @@ urlpatterns = [
     path('signup', core_views.signup, name='signup'),
     path('signup/<member_code>/', core_views.signup, name='signup-user-code'),
     path('soon', core_views.soon, name='soon'),
+    path('contact', core_views.contact, name='contact'),
+    path('politica', core_views.politica, name='politica'),
+    path('soon', core_views.soon, name='soon'),
 ]

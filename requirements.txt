@@ -8,5 +8,8 @@ pytz==2018.3
 six==1.11.0
 static3==0.7.0
 django-heroku
-gunicorn
 requests==2.18.4
+gunicorn
+
+
+
