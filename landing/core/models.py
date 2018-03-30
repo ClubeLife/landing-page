@@ -37,7 +37,7 @@ class Associate(models.Model):
         return 'http://clube.life/signup/{}/'.format(self.member_code)
 
     def save(self, *args, **kwargs):
-        self.member_code = random.choices(string.ascii_letters, k=settings.MEMBER_CODE_LENGTH)
+        self.member_code = ''.join(random.choices(string.ascii_letters, k=settings.MEMBER_CODE_LENGTH))
         super().save(*args, **kwargs)
 
     def __str__(self):
