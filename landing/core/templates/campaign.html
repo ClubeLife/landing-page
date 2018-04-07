@@ -57,13 +57,13 @@
                 <div class="col-md-5 col-sm-7">
                     <h2>Crie sua conta ClubeLife<br></h2>
                     <p class="lead">No momento estamos fazendo o pré-cadastro gratuito. Aproveite, em breve, os nossos
-                        benefícios.</p>
+                        benefícios.<br><b>Campanha:</b> #{{ campaign_name }}</p>
 
                     {% if form.errors %}
                         <div style="color: red;"><b>Verifique os dados do cadastro e tente novamente!</b></div>
                     {% endif %}
 
-                    <form name="signup_form" action="{% url 'signup' %}" method="POST">
+                    <form name="signup_form" action="{% url 'signup-campaign' campaign_name %}" method="POST">
                         {% csrf_token %}
                         <div class="row">
                             <div class="col-xs-12">
@@ -177,21 +177,10 @@
                                 />
                             </div>
                             <div class="col-xs-12">
-                                <label>Convidado(a) por</label>
-                            </div>
-                            <div class="col-xs-12">
-                                {% if form.inviter_email.errors %}
-                                    <div style="color: red;">{{ form.inviter_email.errors.0 }}</div>
-                                {% endif %}
                                 <input
-                                        id="influencers"
-                                        class="validate-required"
-                                        type="text"
-                                        placeholder="E-mail"
-                                        name="inviter_email"
-                                        {% if form.inviter_email.value %}
-                                            value="{{ form.inviter_email.value }}"
-                                        {% endif %}
+                                        type="hidden"
+                                        name="campaign_name"
+                                        value="{{ form.campaign_name.value }}"
                                 />
                             </div>
                             <br>

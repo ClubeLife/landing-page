@@ -24,6 +24,13 @@ class Associate(models.Model):
     phone = models.CharField('telefone', max_length=32)
     zipcode = models.CharField('cep', max_length=32)
     member_code = models.CharField('código de membro', max_length=32, unique=True)
+    by_campaign = models.ForeignKey(
+        'Campaign',
+        related_name='conversions',
+        blank=True,
+        null=True,
+        on_delete=models.DO_NOTHING
+    )
 
     created_at = models.DateTimeField('criado em', auto_now_add=True)
     modified_at = models.DateTimeField('modificado em', auto_now=True)
@@ -38,8 +45,25 @@ class Associate(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.id or not self.member_code:
-            self.member_code = ''.join(random.choices(string.ascii_letters, k=settings.MEMBER_CODE_LENGTH))
+            self.member_code = ''.join(
+                random.choices(string.ascii_letters, k=settings.MEMBER_CODE_LENGTH)
+            )
         super().save(*args, **kwargs)
 
     def __str__(self):
         return self.user.email
+
+
+class Campaign(models.Model):
+    owner = models.ForeignKey('Associate', related_name='campaigns', on_delete=models.CASCADE)
+    name = models.CharField('nome', unique=True, max_length=64)
+
+    created_at = models.DateTimeField('criado em', auto_now_add=True)
+    modified_at = models.DateTimeField('modificado em', auto_now=True)
+
+    class Meta:
+        verbose_name = 'Campanha'
+        verbose_name_plural = 'Campanhas'
+
+    def __str__(self):
+        return '{} - {}'.format(self.owner.user.email, self.name)
