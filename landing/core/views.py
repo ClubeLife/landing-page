@@ -82,6 +82,8 @@ def campaign(request, campaign_name):
             return redirect(r('soon'))
     else:
         c = Campaign.objects.get(name='#' + campaign_name)
+        c.impressions += 1
+        c.save()
         form = CampaignSignupForm(initial={'campaign_name': '#' + campaign_name})
 
     return render(request, 'campaign.html', {

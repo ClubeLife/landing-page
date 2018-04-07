@@ -57,6 +57,7 @@ class Associate(models.Model):
 class Campaign(models.Model):
     owner = models.ForeignKey('Associate', related_name='campaigns', on_delete=models.CASCADE)
     name = models.CharField('nome', unique=True, max_length=64)
+    impressions = models.IntegerField('impressões', default=0)
 
     created_at = models.DateTimeField('criado em', auto_now_add=True)
     modified_at = models.DateTimeField('modificado em', auto_now=True)

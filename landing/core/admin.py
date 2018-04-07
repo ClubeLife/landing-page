@@ -18,7 +18,7 @@ class AssociateModelAdmin(admin.ModelAdmin):
 
 @admin.register(Campaign)
 class CampaignModelAdmin(admin.ModelAdmin):
-    list_display = 'user_email', 'name', 'conversions', 'created_at'
+    list_display = 'user_email', 'name', 'impressions', 'conversions', 'created_at'
     search_fields = 'user_email', 'name'
     date_hierarchy = 'created_at'
 
