@@ -21,7 +21,9 @@ def dashboard(request):
 
 
 def soon(request):
-    return render(request, 'soon.html', {})
+    return render(request, 'soon.html', {
+        'associates': Associate.objects.count()
+    })
 
 
 def contact(request):
