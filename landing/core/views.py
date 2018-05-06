@@ -76,9 +76,10 @@ def campaign(request, campaign_name):
 
             del associate_data['campaign_name']
             inviter = Associate.objects.get(campaigns__name='#' + campaign_name)
+            c = Campaign.objects.get(name='#' + campaign_name)
 
             u = User.objects.create_user(**user_data)
-            a = Associate.objects.create(user=u, influenced_by=inviter, **associate_data)
+            a = Associate.objects.create(user=u, influenced_by=inviter, by_campaign=c, **associate_data)
 
             send_email(a, 'Bem-vindo(a) ao Clube Life!', 'email/welcome.html')
             return redirect(r('soon'))

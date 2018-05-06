@@ -1,6 +1,5 @@
 from pathlib import Path
 
-import django_heroku
 from decouple import config, Csv
 from dj_database_url import parse as dburl
 
@@ -119,4 +118,7 @@ MEMBER_CODE_LENGTH = 10
 
 MAILGUN_API_KEY = config('MAILGUN_API_KEY')
 
-django_heroku.settings(locals())
+if not DEBUG:
+    import django_heroku
+
+    django_heroku.settings(locals())
