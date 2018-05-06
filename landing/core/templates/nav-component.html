@@ -4,12 +4,9 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-3 col-sm-2">
-                <a href="{% url 'index' %}">
-                    <img
-                            class="logo logo-light"
-                            alt="logo"
-                            src="{% static 'img/logo-light.png' %}">
-                </a>
+                <div class="bar__module">
+                    <a href="{% url 'index' %}"> <img class="logo logo-dark" alt="logo" src="{% static 'img/clublife-icon.png' %}">  </a>
+                </div>
             </div>
             <div class="col-xs-9 col-sm-10 text-right">
                 <a href="#" class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs hidden-sm">
